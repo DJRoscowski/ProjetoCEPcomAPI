@@ -9,12 +9,14 @@ fun main() {
     //Exibe o testo entre as aspas
     print("Digite o CEP: ")
     //Variavel que lê o readln e guarda o resultado
-    val cep = readln()
+    val cepDigitado = readln()
 
-    //Variavel que
-    val url = "https://viacep.com.br/ws/$cep/json/"
+    /* Variavel que acessa a API do viaCEP com o "$cepDigitado" no meio.
+    Esse $ pega o valor guardado na variável cepDigiado e bota alí naquele lugar do link,
+    que por sua vez retorna um JSON com o dados do CEP. */
+    val url = "https://viacep.com.br/ws/$cepDigitado/json/"
 
-
+    /* Cria um cliente para fazer a comunicação com a internet */
     val client = HttpClient.newHttpClient()
 
     val request = HttpRequest.newBuilder()
@@ -27,6 +29,5 @@ fun main() {
         HttpResponse.BodyHandlers.ofString()
     )
 
-    //testetestetestetestetestetesteteste
     println(response.body())
 }
