@@ -16,7 +16,9 @@ fun main() {
     que por sua vez retorna um JSON com o dados do CEP. */
     val url = "https://viacep.com.br/ws/$cepDigitado/json/"
 
-    /* Cria um cliente para fazer a comunicação com a internet */
+    /* Cria um cliente para fazer a comunicação com a internet, funcionando como um telefone.
+    Você (programa) quer ligar pra alguém (API ViaCEP), mas precisa de um meio pra fazer isso,
+    que seria um telefone (HttpClient)*/
     val client = HttpClient.newHttpClient()
 
     val request = HttpRequest.newBuilder()
